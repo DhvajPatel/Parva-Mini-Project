@@ -1,0 +1,104 @@
+{
+  "summary": {
+    "rowsLoaded": [840],
+    "rowsUsed": [577],
+    "trainedSamples": [577],
+    "featureVectorLength": [15],
+    "numericStats": {
+      "Traffic_Density": {
+        "mean": [1.0139],
+        "sd": [0.7926]
+      },
+      "Speed_Limit": {
+        "mean": [70.0468],
+        "sd": [32.2313]
+      },
+      "Number_of_Vehicles": {
+        "mean": [3.3085],
+        "sd": [2.0671]
+      },
+      "Driver_Alcohol": {
+        "mean": [0.1473],
+        "sd": [0.3547]
+      },
+      "Driver_Age": {
+        "mean": [43.5823],
+        "sd": [15.1215]
+      },
+      "Driver_Experience": {
+        "mean": [38.9844],
+        "sd": [15.2986]
+      }
+    }
+  },
+  "accident_by_time": [
+    {
+      "Var1": "",
+      "Freq": 29
+    },
+    {
+      "Var1": "Afternoon",
+      "Freq": 197
+    },
+    {
+      "Var1": "Evening",
+      "Freq": 147
+    },
+    {
+      "Var1": "Morning",
+      "Freq": 130
+    },
+    {
+      "Var1": "Night",
+      "Freq": 74
+    }
+  ],
+  "accident_by_weather": [
+    {
+      "Weather": "",
+      "avg_risk": 0.3333
+    },
+    {
+      "Weather": "Clear",
+      "avg_risk": 0.3223
+    },
+    {
+      "Weather": "Foggy",
+      "avg_risk": 0.3143
+    },
+    {
+      "Weather": "Rainy",
+      "avg_risk": 0.2185
+    },
+    {
+      "Weather": "Snowy",
+      "avg_risk": 0.3016
+    },
+    {
+      "Weather": "Stormy",
+      "avg_risk": 0.3704
+    }
+  ],
+  "accident_by_road": [
+    {
+      "Var1": "",
+      "Freq": 27
+    },
+    {
+      "Var1": "Dry",
+      "Freq": 287
+    },
+    {
+      "Var1": "Icy",
+      "Freq": 107
+    },
+    {
+      "Var1": "Under Construction",
+      "Freq": 60
+    },
+    {
+      "Var1": "Wet",
+      "Freq": 96
+    }
+  ]
+}

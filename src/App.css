@@ -1,38 +1,244 @@
-.App {
-  text-align: center;
+/* === Theme Variables === */
+:root {
+  --bg-color: #f9fafb;
+  --text-color: #111827;
+  --card-bg: #ffffff;
+  --card-hover: #eef2ff;
+  --accent: #0072b2;
+  --recommend-bg: rgba(177, 33, 234, 0.692);
+  --footer-color: rgb(49, 83, 234);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* === DARK MODE THEME === */
+body.dark-mode {
+  --bg-color: #0f172a;
+  --text-color: #f9fafb;
+  --card-bg: #1e293b;
+  --card-hover: #334155;
+  --accent: #38bdf8;
+  --recommend-bg: rgba(109, 40, 217, 0.7);
+  --footer-color: #93c5fd;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+/* === General Layout === */
+html,
+body {
+  margin: 0;
+  padding: 0;
   min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: "Poppins", sans-serif;
+  transition: all 0.4s ease;
+}
+
+#root,
+.app-container {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  min-height: 100vh;
+  transition: all 0.4s ease;
+  max-width: 1200px;
+  margin: auto;
+  padding: 20px;
+}
+
+/* === Header === */
+.header {
+  text-align: center;
+  padding: 20px 0;
+  background: linear-gradient(135deg, rgb(238, 168, 39), #42d3c2);
   color: white;
+  border-radius: 10px;
+  margin-bottom: 25px;
+  transition: all 0.4s ease;
+  position: relative;
 }
 
-.App-link {
-  color: #61dafb;
+body.dark-mode .header {
+  background: linear-gradient(135deg, rgb(238, 168, 39), #42d3c2);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* === Theme Toggle Button === */
+.theme-toggle {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  background-color: white;
+  color: #111827;
+  border: none;
+  border-radius: 8px;
+  padding: 6px 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.theme-toggle:hover {
+  background-color: var(--card-hover);
+}
+
+body.dark-mode .theme-toggle {
+  background-color: #334155;
+  color: #f9fafb;
+}
+
+/* === Header Text === */
+.header h1 {
+  margin: 0;
+  font-size: 28px;
+}
+
+.header p {
+  margin: 5px 0 0;
+  font-size: 16px;
+}
+
+/* === Summary Cards === */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 16px;
+  margin-top: 10px;
+}
+
+.stat-card {
+  background: var(--card-bg);
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  padding: 16px 20px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.4s ease;
+}
+
+.stat-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+  background: var(--card-hover);
+}
+
+.stat-card h4 {
+  margin: 0;
+  color: var(--text-color);
+  font-weight: 600;
+  font-size: 15px;
+}
+
+.stat-card p {
+  margin: 6px 0 0;
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--accent);
+}
+
+/* === Numeric Features === */
+.numeric-card {
+  margin-top: 18px;
+  padding: 16px;
+  border-radius: 10px;
+  background: rgb(74, 217, 188);
+  border: rgb(10, 10, 10);
+  transition: all 0.3s ease;
+}
+
+.numeric-card:hover {
+  border-color: palevioletred;
+}
+
+.numeric-card h4 {
+  margin: 0 0 10px 0;
+  color: var(--text-color);
+}
+
+.numeric-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+.num-stat {
+  background: var(--card-hover);
+  border-radius: 8px;
+  padding: 8px 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+  font-size: 14px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.num-label {
+  font-weight: 500;
+  color: var(--text-color);
+}
+
+.num-value {
+  color: var(--accent);
+  font-weight: 600;
+  font-size: 13px;
+}
+
+/* === Charts === */
+.charts-container {
+  margin-top: 30px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 20px;
+}
+
+.chart-box {
+  background: var(--card-bg);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.chart-box:hover {
+  transform: scale(1.02);
+  box-shadow: 0 6px 14px rgba(0, 114, 178, 0.25);
+}
+
+.chart-box h3 {
+  text-align: center;
+  margin-bottom: 10px;
+  color: var(--text-color);
+}
+
+/* === Recommendations === */
+.recommendations {
+  margin-top: 40px;
+  background: var(--recommend-bg);
+  padding: 20px;
+  border-radius: 10px;
+  border-left: 6px solid var(--accent);
+  transition: background 0.3s ease;
+}
+
+.recommendations h3 {
+  margin-top: 0;
+  color: #f1f5f9;
+  margin-bottom: 12px;
+}
+
+.recommendations ul {
+  margin: 0;
+  padding-left: 18px;
+  line-height: 1.7;
+}
+
+.recommendations li {
+  margin-bottom: 8px;
+  color: #e2e8f0;
+  font-size: 15px;
+}
+
+/* === Footer === */
+.footer {
+  text-align: center;
+  margin-top: 40px;
+  font-size: 14px;
+  color: var(--footer-color);
+  font-weight: 500;
+  transition: all 0.3s ease;
 }
